@@ -7,12 +7,13 @@ transition: slide
 
 ###### tags: `小孩聯盟` `EV3` `python`
 
-> This note is yours, feel free to play around.  :video_game: 
-> Type on the left :arrow_left: and see the rendered result on the right. :arrow_right: 
+> Python 是一個相較於C，C++，Java等語言來說，對新手最為友善的語言，但還是有需多基礎知識需要認識，但別擔心我們會拆成幾個小單元一一為各位介紹。  :video_game: 
+> 
 
-## :memo: Where do I start?
+## :memo: 從安裝Python
 
-### Step 1: Change the title and add a tag
+### Step 1: 從GOOGLE 大神找資料
+
 
 - [x] Create my first HackMD note (this one!)
 - [ ] Change its title
