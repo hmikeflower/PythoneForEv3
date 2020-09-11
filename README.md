@@ -10,9 +10,9 @@ transition: slide
 > Python 是一個相較於C，C++，Java等語言來說，對新手最為友善的語言，但還是有需多基礎知識需要認識，但別擔心我們會拆成幾個小單元一一為各位介紹。  :video_game: 
 > 
 
-## :memo: 從安裝Python
+## :memo: 基礎篇
 
-### Step 1: 從GOOGLE 大神找資料
+### Step 1: [安裝Python 至電腦](https://hackmd.io/wOjgYVSHSoqK-358ARncAA?both)
 
 
 - [x] Create my first HackMD note (this one!)
