@@ -3,108 +3,160 @@ tags: python, 小孩聯盟, EV3
 slideOptions:
 transition: slide
 ---
-# Python 語法超超超入門 
 
-###### tags: `小孩聯盟` `EV3` `python`
+# 安裝 Python 3
 
-> Python 是一個相較於C，C++，Java等語言來說，對新手最為友善的語言，但還是有需多基礎知識需要認識，但別擔心我們會拆成幾個小單元一一為各位介紹。  :video_game: 
-> 
-
-## :memo: 從安裝Python
-
-### Step 1: 從GOOGLE 大神找資料
-
-
-- [x] Create my first HackMD note (this one!)
-- [ ] Change its title
-- [ ] Add a tag
-
-:rocket: 
-
-### Step 2: Write something in Markdown
-
-Let's try it out!
-Apply different styling to this paragraph:
-**HackMD gets everyone on the same page with Markdown.** ==Real-time collaborate on any documentation in markdown.== Capture fleeting ideas and formalize tribal knowledge.
-
-- [x] **Bold**
-- [ ] *Italic*
-- [ ] Super^script^
-- [ ] Sub~script~
-- [ ] ~~Crossed~~
-- [x] ==Highlight==
-
-:::info
-:bulb: **Hint:** You can also apply styling from the toolbar at the top :arrow_upper_left: of the editing area.
-
-![](https://i.imgur.com/Cnle9f9.png)
-:::
-
-> Drag-n-drop image from your file system to the editor to paste it!
-
-### Step 3: Invite your team to collaborate!
-
-Click on the <i class="fa fa-share-alt"></i> **Sharing** menu :arrow_upper_right: and invite your team to collaborate on this note!
-
-![permalink setting demo](https://i.imgur.com/PjUhQBB.gif)
-
-- [ ] Register and sign-in to HackMD (to use advanced features :tada: ) 
-- [ ] Set Permalink for this note
-- [ ] Copy and share the link with your team
-
-:::info
-:pushpin: Want to learn more? ➜ [HackMD Tutorials](https://hackmd.io/c/tutorials) 
-:::
+slide: https://www.python.org/
 
 ---
 
-## BONUS: More cool ways to HackMD!
+Python 版本更新速度很快，基本上不要載到2 就可以了
+目前採用3.85 :+1: 
 
-- Table
+---
 
-| Features          | Tutorials               |
-| ----------------- |:----------------------- |
-| GitHub Sync       | [:link:][GitHub-Sync]   |
-| Browser Extension | [:link:][HackMD-it]     |
-| Book Mode         | [:link:][Book-mode]     |
-| Slide Mode        | [:link:][Slide-mode]    | 
-| Share & Publish   | [:link:][Share-Publish] |
+## 依照步驟一步一步安裝即可
 
-[GitHub-Sync]: https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github
-[HackMD-it]: https://hackmd.io/c/tutorials/%2Fs%2Fhackmd-it
-[Book-mode]: https://hackmd.io/c/tutorials/%2Fs%2Fhow-to-create-book
-[Slide-mode]: https://hackmd.io/c/tutorials/%2Fs%2Fhow-to-create-slide-deck
-[Share-Publish]: https://hackmd.io/c/tutorials/%2Fs%2Fhow-to-publish-note
+- 到Python 網頁找到 Downloads
+- 點選下載 到桌面即可
+- :star: 請選擇自己電腦的作業系統符合的安裝檔
 
-- LaTeX for formulas
+![](https://i.imgur.com/stpC9Lw.png)
 
-$$
-x = {-b \pm \sqrt{b^2-4ac} \over 2a}
-$$
+---
 
-- Code block with color and line numbers：
-```javascript=16
-var s = "JavaScript syntax highlighting";
-alert(s);
+### 70% of our users are developers. Developers :heart: GitHub.
+
+---
+
+{%youtube E8Nj7RwXf0s %}
+
+---
+
+### Usage flow
+
+---
+
+
+```graphviz
+digraph {
+  compound=true
+  rankdir=RL
+
+  graph [ fontname="Source Sans Pro", fontsize=20 ];
+  node [ fontname="Source Sans Pro", fontsize=18];
+  edge [ fontname="Source Sans Pro", fontsize=12 ];
+
+
+  subgraph core {
+    c [label="Hackmd-it \ncore"] [shape=box]
+  }
+  
+  c -> sync [ltail=session lhead=session]
+
+  subgraph cluster1 {
+     concentrate=true
+    a [label="Text source\nGithub, Gitlab, ..."] [shape=box]
+    b [label="HackMD Editor"] [shape=box]
+    sync [label="sync" shape=plaintext ]
+    b -> sync  [dir="both"]
+    sync -> a [dir="both"]
+    label="An edit session"
+  }
+}
 ```
 
-- UML diagrams
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-Note left of Alice: Alice responds
-Alice->Bob: Where have you been?
+---
+
+### Architecture of extension
+
+---
+
+![](https://i.imgur.com/ij69tPh.png)
+
+---
+
+## Content script
+
+- Bind with each page
+- Manipulate DOM
+- Add event listeners
+- Isolated JavaScript environment
+  - It doesn't break things
+
+---
+
+# :fork_and_knife: 
+
+---
+
+<style>
+code.blue {
+  color: #337AB7 !important;
+}
+code.orange {
+  color: #F7A004 !important;
+}
+</style>
+
+- <code class="orange">onMessage('event')</code>: Register event listener
+- <code class="blue">sendMessage('event')</code>: Trigger event
+
+---
+
+# :bulb: 
+
+---
+
+- Dead simple API
+- Only cares about application logic
+
+---
+
+```typescript
+import * as Channeru from 'channeru'
+
+// setup channel in different page environment, once
+const channel = Channeru.create()
 ```
-- Auto-generated Table of Content
-[ToC]
 
-> Leave in-line comments! [color=#3b75c6]
+---
 
-- Embed YouTube Videos
+```typescript
+// in background script
+const fakeLogin = async () => true
 
-{%youtube PJuNmlE74BQ %}
+channel.answer('isLogin', async () => {
+  return await fakeLogin()
+})
+```
 
-> Put your cursor right behind an empty bracket {} :arrow_left: and see all your choices.
+<br>
 
-- And MORE ➜ [HackMD Tutorials](https://hackmd.io/c/tutorials)
+```typescript
+// in inject script
+const isLogin = await channel.callBackground('isLogin')
+console.log(isLogin) //-> true
+```
+
+---
+
+# :100: :muscle: :tada:
+
+---
+
+### Wrap up
+
+- Cross envornment commnication
+- A small library to solve messaging pain
+- TypeScript Rocks :tada: 
+
+---
+
+### Thank you! :sheep: 
+
+You can find me on
+
+- GitHub
+- Twitter
+- or email me
