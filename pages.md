@@ -3,8 +3,8 @@ tags: python, 小孩聯盟, EV3
 slideOptions:
 transition: slide
 ---
-
-# 安裝 Python 3
+###### tags: `python` `EV3` `小孩聯盟` `第一篇`
+# 安裝Python 與 IDE 至電腦
 
 slide: https://www.python.org/
 
@@ -19,144 +19,57 @@ Python 版本更新速度很快，基本上不要載到2 就可以了
 
 - 到Python 網頁找到 Downloads
 - 點選下載 到桌面即可
-- :star: 請選擇自己電腦的作業系統符合的安裝檔
+- :star: 請選擇自己電腦的作業系統符合的安裝檔 :star: 
 
 ![](https://i.imgur.com/stpC9Lw.png)
 
 ---
 
-### 70% of our users are developers. Developers :heart: GitHub.
+##  下載與使用IDE
+
+-整合開發環境（Integrated Development Environment，簡稱IDE
+
+-IDE 可以用來輔助開發軟體，有許多方便的功能
+-我們這邊採用 VSCODE 
+
+Visual 
+Studio Code
+https://code.visualstudio.com/
+![](https://i.imgur.com/bCAhxlC.png)
+依照步驟安裝
+
+
+
+---
+### 簡易調教VSCODE與安裝套件
+主畫面的左邊選單 選擇 延伸模組
+![](https://i.imgur.com/K35Aqqe.png)
+
+務必安裝的套件
+
+1．中文語言套件  Chinese (Traditional) Language Pack for Visual Studio Code
+
+２．Python套件 Python extension for Visual Studio Code
 
 ---
 
-{%youtube E8Nj7RwXf0s %}
 
+
+## 小試身手 :100: 
 ---
+創建一名為test的py檔，並執行此程式，於螢幕上輸出"hello world"
 
-### Usage flow
-
----
-
-
-```graphviz
-digraph {
-  compound=true
-  rankdir=RL
-
-  graph [ fontname="Source Sans Pro", fontsize=20 ];
-  node [ fontname="Source Sans Pro", fontsize=18];
-  edge [ fontname="Source Sans Pro", fontsize=12 ];
+1. 於桌面新增一工具區資料夾 名為test+日期
+2. 創建一檔案名為test.py 
+3. 輸入程式碼 print("hello world")
+4. a.使用IDE 撥放鍵執行  b.指令執行
 
 
-  subgraph core {
-    c [label="Hackmd-it \ncore"] [shape=box]
-  }
-  
-  c -> sync [ltail=session lhead=session]
+# 回家自行練習
 
-  subgraph cluster1 {
-     concentrate=true
-    a [label="Text source\nGithub, Gitlab, ..."] [shape=box]
-    b [label="HackMD Editor"] [shape=box]
-    sync [label="sync" shape=plaintext ]
-    b -> sync  [dir="both"]
-    sync -> a [dir="both"]
-    label="An edit session"
-  }
-}
-```
+1.CodeCombat：逃出地城！
+https://codecombat.com/play/dungeon?hour_of_code=true
 
----
 
-### Architecture of extension
 
----
 
-![](https://i.imgur.com/ij69tPh.png)
-
----
-
-## Content script
-
-- Bind with each page
-- Manipulate DOM
-- Add event listeners
-- Isolated JavaScript environment
-  - It doesn't break things
-
----
-
-# :fork_and_knife: 
-
----
-
-<style>
-code.blue {
-  color: #337AB7 !important;
-}
-code.orange {
-  color: #F7A004 !important;
-}
-</style>
-
-- <code class="orange">onMessage('event')</code>: Register event listener
-- <code class="blue">sendMessage('event')</code>: Trigger event
-
----
-
-# :bulb: 
-
----
-
-- Dead simple API
-- Only cares about application logic
-
----
-
-```typescript
-import * as Channeru from 'channeru'
-
-// setup channel in different page environment, once
-const channel = Channeru.create()
-```
-
----
-
-```typescript
-// in background script
-const fakeLogin = async () => true
-
-channel.answer('isLogin', async () => {
-  return await fakeLogin()
-})
-```
-
-<br>
-
-```typescript
-// in inject script
-const isLogin = await channel.callBackground('isLogin')
-console.log(isLogin) //-> true
-```
-
----
-
-# :100: :muscle: :tada:
-
----
-
-### Wrap up
-
-- Cross envornment commnication
-- A small library to solve messaging pain
-- TypeScript Rocks :tada: 
-
----
-
-### Thank you! :sheep: 
-
-You can find me on
-
-- GitHub
-- Twitter
-- or email me
