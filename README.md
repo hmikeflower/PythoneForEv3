@@ -12,12 +12,8 @@ transition: slide
 
 ## :memo: 基礎篇
 
-### Step 1: [安裝Python 至電腦](https://hackmd.io/wOjgYVSHSoqK-358ARncAA?both)
-
-
-- [x] Create my first HackMD note (this one!)
-- [ ] Change its title
-- [ ] Add a tag
+### 第一篇: [安裝Python 與 IDE 至電腦](https://hackmd.io/wOjgYVSHSoqK-358ARncAA?both)
+### 第二篇: [IPython 與 VSCode 環境](https://hackmd.io/wOjgYVSHSoqK-358ARncAA?both)
 
 :rocket: 
 
