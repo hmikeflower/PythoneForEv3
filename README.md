@@ -13,7 +13,7 @@ transition: slide
 ## :memo: 基礎篇
 
 ### 第一篇: [安裝Python 與 IDE 至電腦](https://hackmd.io/wOjgYVSHSoqK-358ARncAA?both)
-### 第二篇: [IPython 與 VSCode 環境](https://hackmd.io/wOjgYVSHSoqK-358ARncAA?both)
+### 第二篇: [IPython 與 VSCode 環境](https://hackmd.io/DMXE7gtsSKKIZbfgJj8Stg)
 
 :rocket: 
 
