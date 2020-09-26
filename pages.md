@@ -4,7 +4,7 @@ slideOptions:
 transition: slide
 ---
 ###### tags: `python` `EV3` `小孩聯盟` `第一篇`
-# 安裝Python 與 IDE 至電腦
+# 安裝Python 與 環境設定
 
 slide: https://www.python.org/
 
@@ -14,29 +14,30 @@ Python 版本更新速度很快，基本上不要載到2 就可以了
 目前採用3.85 :+1: 
 
 ---
+# 重點整理
+---
+1. 下載並安裝 VScode
+2. 簡易調教VSCODE與安裝套件
+3. 安裝git bash 並根據文章調教VScode
+4. 下載並安裝 ANACONDA Paython 3 
+* :star: 記得安裝時要注意建議在安裝 anaconda 時勾選把環境變數加入（path environment variable）
+5. 打開 git bash 測試
 
-## 依照步驟一步一步安裝即可
 
-- 到Python 網頁找到 Downloads
-- 點選下載 到桌面即可
-- :star: 請選擇自己電腦的作業系統符合的安裝檔 :star: 
-
-![](https://i.imgur.com/stpC9Lw.png)
+ :100: 執行 test.py 印出HELLO WORLD 
 
 ---
+## 下載並安裝 VScode
 
-##  下載與使用IDE
+1.  到 Visual Studio Code網頁找到 Downloads 
+[VScode連結網址](https://code.visualstudio.com/)
 
--整合開發環境（Integrated Development Environment，簡稱IDE
+2. 點選下載到桌面即可
+* :star: 請注意要選擇自己電腦的作業系統符合的安裝檔唷 :star: 
+- 如何確定 作業系統是 64bit or 32bit
+- 於本機點下右鍵，選擇內容
+![](https://i.imgur.com/ldaGy0J.png)
 
--IDE 可以用來輔助開發軟體，有許多方便的功能
--我們這邊採用 VSCODE 
-
-Visual 
-Studio Code
-https://code.visualstudio.com/
-![](https://i.imgur.com/bCAhxlC.png)
-依照步驟安裝
 
 
 
@@ -51,8 +52,49 @@ https://code.visualstudio.com/
 
 ２．Python套件 Python extension for Visual Studio Code
 
+
+
 ---
 
+##  安裝git bash 並根據文章調教VScode
+
+
+-git bash 是Windows 用戶安裝git 時默認安裝的命令行工具,不僅介面漂亮功能也不錯,大多數情況下可以替代Windows 原生的cmd 命令
+* [git bash 下載連結](https://gitforwindows.org/)
+
+安裝參考文章
+https://progressbar.tw/posts/1
+![](https://i.imgur.com/Ba46vL2.png)
+
+安裝後請根據文章
+
+[調教VScode 將windows terminal 改成 bash](https://medium.com/cubemail88/vscode-%E5%B0%87-terminal-%E6%94%B9%E6%88%90-bash-977496db8116)
+
+
+
+
+---
+### 下載並安裝 ANACONDA Paython 3
+Anaconda 是一個 all-in-one 的 Python 開發環境，對於初學者來說是個十分合適的開發環境包
+
+:star: 注意記得安裝時要注意建議在安裝 anaconda 時勾選把環境變數加入（path environment variable）
+
+
+[下載網址](https://www.anaconda.com/products/individual)
+![](https://i.imgur.com/Fsj8YZX.png)
+一定要勾選唷!!!
+![](https://i.imgur.com/igG2JOS.png)
+
+
+---
+## 打開 git bash 測試
+```
+python -V #檢查Python 版本  (V是大寫)
+
+pip -V  #檢查 PIP版本
+
+
+```
 
 
 ## 小試身手 :100: 
