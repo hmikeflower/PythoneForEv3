@@ -6,9 +6,8 @@ transition: slide
 ###### tags: `python` `EV3` `小孩聯盟` `第一篇`
 # 安裝Python 與 環境設定
 
-slide: https://www.python.org/
 
----
+
 
 Python 版本更新速度很快，基本上不要載到2 就可以了
 目前採用3.85 :+1: 
@@ -112,6 +111,6 @@ pip -V  #檢查 PIP版本
 1.CodeCombat：逃出地城！
 https://codecombat.com/play/dungeon?hour_of_code=true
 
-
+2.均一 教育平台 https://www.junyiacademy.org/computing/programming/python/python-m01
 
 
